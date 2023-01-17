@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      h1{
+         background-color: blue;
+         margin: 10px auto;
+      }
+
+      .pink{
+         background-color: rgb(255, 0, 221);
+         color: white;
+      }
+
+      .box{
+         width: 300px;
+         height: 300px;
+         border: 2px solid #ccc;
+      }
+   </style>
+</head>
+<body>
+   <h1 id="toggle-class">Me clique!</h1>
+   <p>&lt;p&gt; <span>&lt;span&gt; <a href="#">&lt;a&gt; vazio</a></span></p>
+   <input type="email" placeholder="Placeholder">
+
+   <div class="box"></div>
+   <div class="source">
+      <div class="text">
+         <p>Olá Mundo!</p>
+      </div>
+   </div>
+<script src="./jquery-3.6.1.min.js"></script>
+<script>
+   const $toggleh1 = $('#toggle-class')
+   $toggleh1.click(() => {
+      // chama addClass() ou removeClass() conforme a necessidade.
+      $toggleh1.toggleClass('pink');
+   })
+   // find() acha o elemento dentro (direta ou indiretamente) dentro do outro e o retorna
+   $('p').find('span').css('color', 'red');
+   $('p').find('a').css('font-size', '2em');
+
+   const input = $('input');
+   input.before(`Input original: <strong>${input.attr('type')}</strong>`)
+   input.attr('type','text');//seta o atributo
+   input.after(`Novo input: <strong>${input.attr('type')}</strong>`);
+
+   const $text = $('.source .text');
+   const $box = $('.box');
+   //Copiando Elementos
+   // $text.clone().appendTo($box)
+   //Movendo Elementos
+   $text.appendTo($box);
+</script>
+</body>
+</html>

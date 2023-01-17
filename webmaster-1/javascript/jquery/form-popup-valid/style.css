@@ -1,0 +1,98 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+   height: 100%;
+}
+
+.button{
+   cursor: pointer;
+   padding: 0.7em 0.8em;
+   background-color: #69a4d3;
+   color: white;
+   border: 2px solid #476e8e !important;
+   border-radius: 0.6em;
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+   transition: background-color 0.2s;
+}
+
+.button:hover{
+   background-color: #5d91bc;
+}
+
+.button#contact{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: max-content;
+   max-width: 90%;
+   font-size: clamp(16px, 8vw, 24px);
+}
+
+#popup{
+   display: none;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+#background{
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.4);
+}
+
+#form{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 90%;
+   max-width: 300px;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   padding: 10px 10px 20px;
+   border: 4px solid rgb(113, 113, 113);
+}
+
+#close-icon{
+   cursor: pointer;
+   align-self: flex-end;
+   width: 40px;
+}
+
+.input-field{
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.input-field label{
+   display: inline-block;
+   margin-bottom: 8px;
+}
+
+.input-field input{
+   width: 100%;
+   padding: 12px 16px;
+   font-size: 1em;
+   outline: none;
+   border: 1px solid rgb(150, 150, 150);
+   border-radius: 5px;
+}
+
+.input-field input:focus{
+   outline: 1px solid #69a4d3;
+}
+.input-field input[invalid=true]{
+   outline: 1px solid red !important;
+}
+
+input#register{
+   margin-top: 20px;
+}

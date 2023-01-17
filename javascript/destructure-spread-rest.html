@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos Javascript</title>
+</head>
+<body>
+    
+<script>
+    
+    // Destructure
+    const names = ['breno','gu','ana', 'meri', 'leo', 'pati paulo'];
+    const [a, b, ...c] = names;
+    console.log(c);
+    //todos os elementos dps de B estarão na variável C
+
+    //Spread
+    const objectNamesArray =[{nome: 'João'}, {nome: 'Felipe'} ]
+    const NewObjectNamesArray = [...objectNamesArray, {nome: 'Breno'}]
+    //Pegou um por um todos os elementos de objectNamesArray, e adicionou na lista objectNames
+    console.log(NewObjectNamesArray);
+
+    //Rest
+    //...variavel ==> rest
+    function consoleAll(...things){
+        const array = things;
+        array.forEach(element => console.log(element));
+    }
+
+    consoleAll(1, 2, 3, 4)
+</script>
+</body>
+</html>

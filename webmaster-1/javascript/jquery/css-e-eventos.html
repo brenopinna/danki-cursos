@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS & Eventos no JQuery</title>
+   <style>
+      html,body{height: 100%;}
+      .box{
+         position: absolute;
+         top: 100px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 400px;
+         height: 400px;
+         box-shadow: 0px 4px 16px 0px rgb(0 0 0 / 39%);
+         font-size: 2em;
+         background-color: #ccc;
+      }
+   </style>
+</head>
+<body>
+   <div class="artigo-1">
+      <p>Sou o Artigo 1!!</p>
+   </div>
+   <div class="artigo-2">
+      <p>Sou o Artigo 2!!</p>
+   </div>
+
+   <div class="box">Clique fora de mim e me veja sumir!</div>
+
+   <script src="./jquery-3.6.1.min.js"></script>
+   <script>
+      // Dá pra aplicar funções seguidamente pq ela retorna o objeto.
+      $(() => {
+         let artigo1 = $('.artigo-1');
+         let artigo2 = $('.artigo-2');
+         // CSS NO JQUERY
+         artigo1.css('background-color', '#ccc');
+         artigo2.css('background-color', '#ccc')
+         //EVENTOS NO JQUERY
+         artigo2.click(() => {
+            artigo2.css('background-color', 'purple');
+         })
+
+         // .hover() recebe 2 funções como parâmetros: uma quando estiver hover e outra quando sair do hover.
+         artigo1.hover(() => {
+            artigo1.css('background-color', 'red')
+         }, () => {
+            artigo1.css('background-color', 'rgb(100,100,100)')
+         })
+
+         // Brincadeirinha com o .resize()
+         let timer;
+         $(window).resize(() => {
+            //atualizar página quando o resize PARAR
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+               // Nativo do js, recarrega a página
+               location.reload();
+            }, 300);
+         })
+
+         //Mini PopUp
+         $('body').click(() => 
+            $('.box').css('display','none')
+         );
+         $('.box').click(e =>
+            e.stopPropagation()
+         );
+      })
+   </script>
+</body>
+</html>

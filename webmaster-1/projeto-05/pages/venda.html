@@ -1,0 +1,138 @@
+<section class="venda">
+
+   <div class="container-titulo">
+      <div class="linha"></div>
+      <h2>Venda</h2>
+   </div><!--container-titulo-->
+
+   <div class="container">
+      <aside>
+
+         <div class="filtro-preco">
+            <h2>Filtre por preço</h2>
+            <div class="barra-preco">
+               <div class="fill">
+                  <div class="pointer"></div>
+               </div><!--fill-->
+            </div><!--barra-preco-->
+            <div class="precos">
+               <h2>R$ 0,00</h2>
+               <h2>R$ 70.000,00</h2>
+            </div><!--precos-->
+            <h2>Selecionado: R$ <span id="preco-atual">0,00</span></h2>
+         </div><!--filtro-preco-->
+
+         <div class="filtro-ano">
+            <h2>Filtre por ano</h2>
+            <form>
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item1">
+                  <label for="item1">
+                     <div class="circle"></div>
+                  </label>
+                  <span>Todas as décadas</span>
+               </div><!--form-wrapper-->
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item2">
+                  <label for="item2">
+                     <div class="circle"></div>
+                  </label>
+                  <span>2010 - 2019</span>
+               </div><!--form-wrapper-->
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item3">
+                  <label for="item3">
+                     <div class="circle"></div>
+                  </label>
+                  <span>2000 - 2009</span>
+               </div><!--form-wrapper-->
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item4">
+                  <label for="item4">
+                     <div class="circle"></div>
+                  </label>
+                  <span>1990 - 1999</span>
+               </div><!--form-wrapper-->
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item5">
+                  <label for="item5">
+                     <div class="circle"></div>
+                  </label>
+                  <span>1980 - 1989</span>
+               </div><!--form-wrapper-->
+               <div class="form-wrapper">
+                  <input type="checkbox" name="" id="item6">
+                  <label for="item6">
+                     <div class="circle"></div>
+                  </label>
+                  <span>1970 - 1979</span>
+               </div><!--form-wrapper-->
+            </form>
+         </div><!--filtro-ano-->
+
+      </aside>
+      <section class="vitrine-venda">
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+         <div class="vitrine-destaque">
+            <div class="carro-img"></div>
+            <div class="info-carro">
+               <h2>Carro Maneirão</h2>
+               <p>Fatos blabla sobre o carro</p>
+            </div><!--info-carro-->
+            <a href="./pages/venda-single.html"><button class="button-default">Mais Detalhes</button></a>
+         </div><!--vitrine-destaque-->
+      </section><!--vitrine-venda-->
+
+   </div><!--container-->
+</section><!--venda-->
+<script src="./js/barra-pesquisa.js"></script>
+<script>
+   $('a').click(function(){
+      const link = $(this).attr('href');
+      $.ajax({
+         url: `http://127.0.0.1:5500/projeto-05/${link}`
+      }).done(data => {
+         $('#page').html(data)
+      })
+      return false;
+   })
+</script>

@@ -1,0 +1,104 @@
+header{
+   box-sizing: content-box;
+   border-bottom: 3px solid #eb2d2d;
+}
+
+/*
+estudar o projeto pra colocar aqueles linkzinhos: 
+home > venda > veiculo
+enfim, vc ja sacou
+*/
+
+section.venda-single .container{
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   padding: 40px 2%;
+   max-width: 1100px;
+}
+
+.venda-single .info-veiculo{
+   width: 70%;
+}
+
+.venda-single .info-veiculo .foto-destaque{
+   background-image: url('../imagens/carro1.jpg');
+   width: 100%;
+   padding-top: 70%;
+   background-size: cover;
+   background-position: center;
+}
+/* carousel */
+
+.carousel{
+   width: 70%;
+}
+
+.main-carousel{
+   position: relative;
+}
+
+.main-carousel .carousel__slide{
+   width: 100%;
+   margin: 0 10px;
+   padding: 0;
+}
+.nav-carousel .carousel__slide{
+   cursor: pointer;
+   width: 50%;
+   max-width: 250px;
+   margin: 15px 10px;
+   padding: 0;
+   transition: transform .3s;
+}
+
+.nav-carousel .carousel__slide.is-nav-selected{
+   transform: scale(1.1);
+   border: 5px solid #EB2D2D;
+}
+
+.carousel__button{
+   background-color: white;
+   margin: 0 20px;
+   box-shadow: 0px 2px 6px rgba(0,0,0,0.4);
+}
+
+/* carousel end */
+
+.venda-single .vitrine-destaque{
+   width: 30%;
+   padding: 20px;
+}
+
+.venda-single .vitrine-destaque,
+.venda-single .vitrine-destaque .info-carro{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.veiculos-destaque .container{
+   max-width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+   section.venda-single .container{
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+   }
+
+   .venda-single .info-veiculo,
+   .venda-single .vitrine-destaque{
+      width: 100%;
+   }
+
+   .carousel__button.is-prev{
+      transform: translate(-120%, -50%);
+   }
+
+   .carousel__button.is-next{
+      transform: translate(120%, -50%);
+   }
+
+}

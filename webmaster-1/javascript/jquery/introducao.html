@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Introdução JQuery</title>
+</head>
+<body>
+   <script src="./jquery-3.6.1.min.js"></script>
+   <script>
+      // OBS: funciona igual mas n é convenção
+      // $(document).ready(function(){alert('DOM Carregado!')})
+
+      // É uma boa prática atribuir os objetos JQuery ( $(body) ) à variáveis, pra não criar novos objetos sem necessidade.
+      
+      // o $() tbm é meio q um querySelector
+
+      //método recomendado
+      $(() => {
+         /*
+            função executada quando o DOM carrega,
+            mas não necessariamente significa que
+            as mídias tenham carregado, só o HTML.
+         */
+         alert('DOM Carregado!');
+         // executar dps do DOM + midia carregarem
+         $(window).on('load', () => {
+            alert('Página TOTALMENTE carregada!')
+         })
+      })
+   </script>
+</body>
+</html>

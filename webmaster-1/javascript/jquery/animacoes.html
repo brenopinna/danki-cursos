@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animações e Efeitos JQuery</title>
+   <style>
+      .box{
+         text-align: center;
+         background-color: #ccc;
+         padding: 20px 40px;
+         margin: 30px auto;
+      }
+
+      .box-2{
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <div class="fade">
+      <div class="box">
+         <h1>Box 1 - Fade Out</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+      <div class="box box-2">
+         <h1>Box 2 - Fade In</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+   </div>
+   <div class="slide-toggle">
+      <div class="box">
+         <h1>Box 3 - Me Clique!</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+      <div class="box box-2">
+         <h1>Box 4 - Slide Toggle</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+   </div>
+   <div class="animate">
+      <div class="box">
+         <h1>Box 5 - Animate</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+      <div class="box box-2">
+         <h1>Box 6</h1>
+         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero reprehenderit iusto facilis sunt sed quisquam illum minima eveniet! Aliquid error ipsum saepe harum temporibus laboriosam fugiat, unde voluptatibus cupiditate sit doloribus libero ea pariatur quisquam ex tempore nostrum facilis consectetur voluptates amet dolor esse! Atque in ad pariatur corrupti possimus blanditiis, enim dolorum cumque consectetur quo totam, harum, nesciunt soluta porro cupiditate nam excepturi nisi molestias aliquid placeat quos exercitationem? Adipisci nobis aspernatur quaerat iste assumenda? Deserunt, quod? Blanditiis sapiente corporis, maxime ratione culpa nihil tenetur beatae modi officiis. Natus nemo nisi nobis similique quo distinctio! Tenetur culpa a facere.</span>
+      </div>
+   </div>
+<script src="./jquery-3.6.1.min.js"></script>
+<script>
+   const $boxFade = $('.fade .box');
+   // Object.fadeOut(time, functionAfter);
+   $boxFade.eq(0).fadeOut(1000, () => {
+      $boxFade.eq(1).fadeIn(1000, () => console.log('FIM DO FADE OUT!'))
+   });
+   
+   // Object.slideToggle(time, functionAfter);
+   const $boxToggle = $('.slide-toggle .box');
+   $boxToggle.eq(0).click(() => {
+      $boxToggle.eq(1).slideToggle();
+   })
+   
+   // Object.animate(changesObject, time, functionAfter);
+   const $boxAnimate = $('.animate .box');
+   $boxAnimate.eq(0).animate({
+      'width': '40%',
+      'height': '500px',
+      'marginTop': '100px'
+   }, 1000, () => console.log('FIM DO ANIMATE!'));
+</script>
+</body>
+</html>

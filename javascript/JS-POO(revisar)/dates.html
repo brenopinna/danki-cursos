@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <script>
+            //uma classe pronta
+            //var date = new Date(); 
+
+            //pega o dia atual do mês
+            //alert(date.getDate()) 
+
+            //pega o dia atual da semana (de 0 a 6, começando no domingo)
+            //alert(date.getDay()); 
+
+            //pega o ano atual
+            //alert(date.getFullYear()); 
+
+            //pega só a hora do horario atual
+            //alert(date.getHours()); 
+
+            //pega só os minutos do horario atual
+            //alert(date.getMinutes()); 
+
+            //esse aq foi uma brincadeira q eu fiz, heheheh
+            //alert('Você clicou aqui no dia '+ date.getDate() + ' às ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()) ;
+
+            //vc define a própria data assim
+            var date = new Date('03/30/2022');
+            var date2 = new Date('03/29/2022');
+
+            //esse método devolve a data, medida em milissegundos
+            var diferenca = (date2.getTime() - date.getTime()) / (1000*3600*24)
+            alert(diferenca + ' dias')
+        </script>
+    </body>
+</html>

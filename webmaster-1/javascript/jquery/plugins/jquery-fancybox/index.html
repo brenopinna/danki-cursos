@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JQuery Fancybox Plugin</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!--
+      RESUMO:
+      1-<a> com o atributo data-fancybox (se colocar algum valor, vira uma galeria)
+      2-data-caption: legenda para a imagem
+      3-valor entre os <a>: oq vc clica pra abrir a galeria.
+      4- data-src = href
+      5- no data-src, pode usar um seletor css para alguma div ou algo do tipo.
+   -->
+   <!-- https://fancyapps.com/docs/ui/quick-start -->
+   <h1>Galeria</h1>
+   <p>Clique em alguma imagem para visualizar</p>
+   <div id="galeria-1">
+      <!--
+         RESULTADO FINAL:
+         <a
+            href="../images/img1.jpg"
+            data-fancybox="galeria-1"
+            data-caption="Imagem 1"
+         >
+            <img src="../images/img1.jpg">
+         </a>
+         <a
+            href="../images/img2.jpg" 
+            data-fancybox="galeria-1" 
+            data-caption="Imagem 2"
+         >
+            <img src="../images/img2.jpg">
+         </a>
+         <a
+            href="../images/img3.jpg" 
+            data-fancybox="galeria-1" 
+            data-caption="Imagem 3"
+         >
+            <img src="../images/img3.jpg">
+         </a>
+      -->
+   </div>
+
+   <h1>Carrossel</h1>
+   <p>Clique em alguma bolinha, nas setas ou arraste para ver as demais fotos</p>
+   <div class="carousel">
+      <!-- data-lazy-src faz com que o src só seja carregado quando aparecer no viewport do carrossel. -->
+      <!-- mas esse atributo deu alguns bugs aqui nos meus testes então nao usei. -->
+      <div class="carousel__slide"><img src="../images/img1.jpg"></div>
+      <div class="carousel__slide"><img src="../images/img2.jpg"></div>
+      <div class="carousel__slide"><img src="../images/img3.jpg"></div>
+   </div>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

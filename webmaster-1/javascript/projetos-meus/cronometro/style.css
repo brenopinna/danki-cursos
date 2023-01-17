@@ -1,0 +1,48 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+   text-align: center;
+   padding: 20px;
+}
+
+main{
+   text-align: center;
+}
+
+.time{
+   border: none;
+   border-bottom: 1px solid gray;
+   font-size: 30px;
+   width: 4em;
+   text-align: center;
+   outline: none;
+}
+
+.time:read-only{cursor: not-allowed;}
+
+button{
+   cursor: pointer;
+   margin-top: 20px;
+   font-size: 2em;
+   padding: 5px 20px;
+   border: 1px solid rgb(200, 200, 200);
+   border-radius: 20px;
+}
+
+.start{
+   background-color: green;
+}
+
+.stop{
+   background-color: red;
+}
+
+button:disabled{
+   background-color: rgb(160,160,160);
+   cursor: not-allowed;
+}

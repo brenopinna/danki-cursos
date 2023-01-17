@@ -1,0 +1,35 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+#galeria-1{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   overflow: auto;
+   gap: 10px;
+   padding: 10px;
+}
+
+#galeria-1 img{
+   height: 300px;
+}
+
+.carousel{
+   max-width: 900px;
+   margin: auto;
+}
+
+.carousel__slide{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+}
+
+.carousel__slide img{
+   max-width: 100%;
+   max-height: 350px;
+}

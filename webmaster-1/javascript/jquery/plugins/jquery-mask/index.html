@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JQuery Mask Plugin</title>
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 1.3rem;
+      }
+
+      form{
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         width: 90%;
+         max-width: 400px;
+         margin: 10px auto;
+         padding: 30px 20px;
+         background-color: rgb(240,240,240);
+         border: 1px solid rgb(190, 190, 190);
+      }
+
+      .field:not(.radio){
+         display: flex;
+         flex-direction: column;
+      }
+
+      .field label{
+         cursor: pointer;
+      }
+
+      .field input{
+         font-size: 1.3rem;
+         outline: none;
+         padding: 5px;
+      }
+
+      button{
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+   <form action="#">
+      <!-- Plugin JQuery Mask -->
+      <!-- https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html -->
+      <div class="field">
+         <label for="telefone">Telefone</label>
+         <input type="text" id="telefone">
+      </div>
+      <div class="field radio">
+         <input type="radio" name="identificacao" id="cpf" value="cpf">
+         <label for="cpf">CPF</label>
+      </div>
+      <div class="field radio">
+         <input type="radio" name="identificacao" id="cnpj" value="cnpj">
+         <label for="cnpj">CNPJ</label>
+      </div>
+      <div class="field" id="identificacao"></div>
+      <button>Enviar</button>
+   </form>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="./jquery.mask.js"></script>
+<script>
+   $('#telefone')
+      .mask('(00) 0000-00009')
+      .blur(function({target}){
+         const length = $(target).unmask().val().length;
+         if(length === 11) $(target).mask('(00) 00000-0000');
+      })
+
+   $('[name=identificacao]').change(() => {
+      const masks = {
+         cpf: {
+            pattern: '000.000.000-00'
+         },
+         cnpj: {
+            pattern: '00.000.000/ZZZS-00',
+            translation: {
+               translation: {
+                  Z: {
+                  pattern: /0/
+                  },
+                  S: {
+                     pattern: /1|2/
+                  }
+               }
+            }
+         }
+      }
+      $('[name=identificacao]').each(function(){
+         if(this.checked){
+            const kindOfId = this.id;
+            $('#identificacao').html(`
+               <label for="${kindOfId}">${kindOfId.toUpperCase()}</label>
+               <input type="text" id="${kindOfId}">
+            `)
+            if(kindOfId === 'cpf'){
+               $('#identificacao #cpf').mask(masks.cpf.pattern);
+            }else if(kindOfId === 'cnpj'){
+               $('#identificacao #cnpj').mask(masks.cnpj.pattern, masks.cnpj.translation);
+            }
+         }
+      })
+   })
+</script>
+</body>
+</html>

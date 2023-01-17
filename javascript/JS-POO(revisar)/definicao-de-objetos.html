@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <script>
+        function Pessoa() {    //função que cria um objeto
+            this.nome = 'Breno';
+            this.idade = 15
+            this.printa = function (txt) {
+                alert(txt)
+            }
+        }
+
+
+        function Animal(nome, idade) {
+            if (nome == undefined) {
+                nome = '<<Indefinido>>'
+            }
+
+            if (idadae == undefined) {
+                idade = '<<Indefinida>>'
+            }
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        animal = new Animal()  //criando objeto...
+        console.log(animal.nome)
+
+        /*
+        class Animal; //classe
+        var doguinho = new Animal; //doguinho == instância da classe Animal (instância é basicamente a criação de um objeto)
+        */
+
+    </script>
+</body>
+
+</html>

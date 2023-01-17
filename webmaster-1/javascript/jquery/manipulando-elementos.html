@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manipulação de HTML/CSS</title>
+   <style>
+      .box{
+         box-sizing: border-box;
+         width: 400px;
+         background-color: gray;
+         padding: 10px;
+         border: 10px solid black;
+      }
+   </style>
+</head>
+<body>
+   <div class="box">Meu texto</div>
+   <div class="box">Meu texto</div>
+   <input type="text" placeholder="Teste">
+   <script src="./jquery-3.6.1.min.js"></script>
+   <script>
+      let box = $('.box');
+      //pega a width, descontando padding
+      console.log('sem padding: ' + box.width());
+      //pega a width, contando padding
+      console.log('com padding: ' + box.innerWidth());
+      //pega a width, contando border e margin(essa ultima só se meter um true como parametro da funcao)
+      console.log("com border: " + box.outerWidth());
+      //seta a width
+      setTimeout(() => {
+         // melhor pelo css doq pelo width(), pq o css leva em conta padding, border, etc
+         box.css('width','900')
+      }, 600);
+      // tudo q ta aq vale pra height tbm
+
+      box.html('<p>Adicionado pelo JQuery</p>');
+      //retorna o conteudo html da box
+      console.log(box.html());
+      //igual ao .html(), mas esse text  nao add conteudo html, so texto.
+      box.text('Texto puro, sem html: <p>Texto</p>');
+      $('input').val("Inserido por Jquery");
+
+      // essa eq pega o elemento no indice especificado
+      box.eq(0).html('Mudei só a primeira box');
+      setTimeout(() => {
+         box.eq(1).remove();
+      }, 1000);
+
+      // Escopo de EventListener
+      const $body = jQuery('body');
+      //Caso1: o click n funciona pq o link entrou no html dps do querySelector(a)
+      jQuery('a').click(() => alert('clicou'))
+      //Caso2: o click funciona pq o eventlistener ta em TODO link dentro do body.
+      $body.on('click', 'a', () => {alert('clicou 2')})
+      $body.html($body.html() + '<a href="#">Link</a>');
+
+      // esse this se refere ao target do evento sendo disparado,
+      //só funciona pra functions, sem ser as arrows
+      let makeGreen = function(){$(this).css('background', 'green')};
+      $('input').focus(makeGreen);
+      $('a').click(makeGreen);
+   </script>
+</body>
+</html>

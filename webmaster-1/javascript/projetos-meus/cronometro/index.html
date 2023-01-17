@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Projeto Cronometro - JavaScript</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <header>
+      <h1>Cronômetro</h1>
+   </header>
+   <main>
+      <div class="timer">
+         <input value="00" class="time" type="number" id="min" placeholder="min" min="0">
+         <input value="00" class="time" type="number" id="sec" placeholder="sec" min="0" max="59">
+      </div>
+      <button class="start">Iniciar</button>
+      <button class="stop" disabled>Parar</button>
+   </main>
+<script src="./script.js"></script>
+</body>
+</html>

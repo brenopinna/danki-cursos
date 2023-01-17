@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   font-family: "Open Sans", sans-serif;
+}
+
+:root{
+   --danki: #212343;
+   --danki-dark: #1a1c34;
+   --danki-transparente: #212343be;
+   --danki-transparente-dark: rgba(120,120,120, 0.5);
+   --secondary-title-size: 1.3rem;
+   --leve: 300;
+   --normal: 400;
+}
+
+.container{
+   width: 100%;
+   max-width: 1300px;
+   margin: 0 auto;
+   padding: 0 4rem;
+}
+
+header{
+   background-color: var(--danki);
+   padding: 1.3rem 0;
+}
+
+.contato{
+   background-image: url('../images/computer.png');
+   background-size: cover;
+   background-position: center;
+}
+
+.container--contato{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 2rem;
+   height: 500px;
+}
+
+.vantagens{
+   width: 100%;
+   max-width: 500px;
+   height: fit-content;
+   font-weight: var(--leve);
+   background-color: var(--danki-transparente);
+}
+
+.vantagens__list{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 2rem 1.4rem;
+   list-style-position: inside;
+   color: white;
+}
+
+.form{
+   width: 100%;
+   max-width: 400px;
+   height: calc(100% + 2rem);
+   display: flex;
+   flex-direction: column;
+   gap: 2.4rem;
+   padding: 0.7rem;
+   background-color: white;
+   border: 0.7rem solid var(--danki-transparente-dark);
+   background-clip: padding-box;
+}
+
+.form__title{
+   font-size: var(--secondary-title-size);
+   font-weight: var(--leve);
+}
+
+.form__input-field{
+   position: relative;
+   --input-padding: 1rem;
+   --input-font-size: 1.1rem;
+}
+
+.form__input{
+   width: 100%;
+   padding: var(--input-padding);
+   font-size: var(--input-font-size);
+   border: 1px solid rgb(0, 0, 0, 0.4);
+   outline: none;
+}
+
+.form__input, .form__submit{
+   height: 3.5rem;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:valid ~ .form__label{
+   font-size: 1rem;
+   top: 0;
+   color: black;
+   padding: 0 var(--input-padding);
+   background-color: white;
+}
+
+.form__label{
+   cursor: text;
+   position: absolute;
+   left: var(--input-padding);
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: var(--input-font-size);
+   transition: 0.3s;
+   color: rgb(0, 0, 0, 0.4);
+}
+
+.form__submit{
+   cursor: pointer;
+   width: 60%;
+   margin: auto;
+   margin-bottom: 1rem;
+   font-size: 1.5rem;
+   background-color: var(--danki);
+   color: white;
+   border: none;
+}
+
+.form__submit:hover{
+   background-color: var(--danki-dark);
+}
+
+.container--diferenciais{
+   position: relative;
+}
+
+.diferenciais__arrow{
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.diferenciais__title{
+   font-weight: normal;
+   color: var(--danki);
+   text-align: center;
+   padding-top: 100px
+}
+
+.diferenciais__wrapper{
+   margin-top: 50px;
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.diferencial{
+   flex-grow: 0.3;
+   text-align: center;
+   width: 300px;
+}
+
+.diferencial__title{
+   font-weight: normal;
+   color: var(--danki);
+   font-size: var(--secondary-title-size);
+}
+
+.diferencial__text{
+   text-align: justify;
+   margin-top: 0.6rem;
+}
+
+footer{
+   margin-top: 100px;
+   text-align: center;
+   color: white;
+   padding: 1rem;
+   background-color: var(--danki);
+}
+
+.container--footer{
+   font-weight: var(--leve);
+   display: flex;
+   padding: 0;
+   flex-direction: column;
+   gap: 0.6rem;
+}
+
+.footer__link{
+   color: white;
+   font-weight: var(--normal);
+}
+
+@media screen and (max-width: 980px) {
+   .container--contato{
+      flex-direction: column;
+      padding: 2rem 0;
+      width: 100%;
+      max-width: 700px;;
+      height: auto;
+   }
+
+   .form, .vantagens{
+      max-width: unset;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .container--header{
+      text-align: center;
+   }
+}

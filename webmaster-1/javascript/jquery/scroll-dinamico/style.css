@@ -1,0 +1,35 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{font-family: Arial, Helvetica, sans-serif;}
+
+header{position: sticky;top:0;}
+
+nav{width: 100%;}
+
+ul{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 40px;
+   padding: 18px 2%;
+   background-color: #ccc;
+   list-style: none;
+}
+
+ul li{
+   font-size: 1.3em;
+   text-transform: uppercase;
+}
+
+a{color: black;}
+
+a:not(.selected){text-decoration: none;}
+
+main .sessao{
+   height: 100vh;
+   padding: 60px 2%;
+}

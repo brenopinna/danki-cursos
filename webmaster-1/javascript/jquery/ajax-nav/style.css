@@ -1,0 +1,29 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+   text-align: center;
+   padding: 20px;
+}
+
+nav ul{
+   display: flex;
+   justify-content: space-around;
+   list-style-type: none;
+   margin: auto;
+   max-width: 600px;
+   text-align: center;
+   text-transform: uppercase;
+   padding: 20px;
+}
+
+#container{
+   max-width: 700px;
+   border: 1px solid red;
+   margin: auto;
+   height: 400px;
+}

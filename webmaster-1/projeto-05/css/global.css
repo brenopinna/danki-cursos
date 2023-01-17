@@ -1,0 +1,300 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Oswald';
+}
+
+html, body{
+   height: 100%;
+}
+/* classes auxiliares */
+
+.container{
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 2%;
+}
+
+.button-default{
+   cursor: pointer;
+   border: 0;
+   border-bottom: 5px solid #b21e1e;
+   color: white;
+   width: 150px;
+   font-size: 18px;
+   font-style: italic;
+   height: 40px;
+   text-decoration: none;
+   background-color: #eb2d2d;
+}
+
+   /* titulo bonitao */
+.container-titulo{
+   text-align: center;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.container-titulo h2{
+   position: relative;
+   display: inline-block;
+   padding: 0 20px;
+   font-size: 27px;
+   font-style: italic;
+   text-transform: uppercase;
+   background-color: white;
+}
+
+.linha{
+   width: 100%;
+   height: 2px;
+   position: relative;
+   top: 20px;
+   background-color: black;
+}
+   /****/
+/****/
+/* header */
+
+header{
+   height: 120px;
+}
+
+header .container{
+   height: 100%;
+   padding: 0 2%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+header nav.desktop ul{
+   display: flex;
+   gap: 60px;
+   list-style-type: none;
+}
+
+header nav a{
+   color: black;
+   text-decoration: none;
+}
+
+header nav ul li{
+   font-style: italic;
+   font-size: 23px;
+}
+
+nav.mobile{
+   z-index: 1;
+   display: none;
+   height: 32px;
+   width: 32px;
+   background-size: contain;
+   background-repeat: no-repeat;
+   cursor: pointer;
+   background-image: url('../imagens/icon_menu.png');
+}
+
+header nav.mobile ul{
+   display: none;
+   flex-direction: column;
+   background-color: white;
+   position: absolute;
+   gap: 20px;
+   padding: 20px 0;
+   border-bottom: 4px solid #eb2d2d;
+   top: 100px;
+   left: 0;
+   list-style-type: none;
+   width: 100%;
+}
+
+nav.mobile ul li{
+   text-align: center;
+}
+
+/****/
+/* veiculos destaque */
+.veiculos-destaque .container{
+   max-width: 1000px;
+}
+
+section.veiculos-destaque{
+   padding: 90px 0;
+}
+
+.vitrine-destaque-container{
+   display: flex;
+   gap: 10px;
+}
+
+.vitrine-destaque{
+   width: 100%;
+}
+
+.vitrine-destaque .carro-img{
+   background-image: url('../imagens/carro1.jpg');
+   width: 100%;
+   padding-top: 60%;
+   background-size: cover;
+   background-position: center;
+}
+
+.vitrine-destaque h2{
+   margin: 5px 0;
+   font-size: 20px;
+   font-weight: normal;
+}
+
+.vitrine-destaque p{
+   color: #353535;
+}
+
+.vitrine-destaque .button-link{
+   margin-top: 10px;
+}
+/****/
+/* section contato */
+section.contato{
+   padding: 80px 2%;
+}
+
+.contato .container{
+   max-width: 700px;
+}
+
+.contato form{
+   align-items: center;
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.contato .w50{
+   display: flex;
+   width: 100%;
+   gap: inherit;
+}
+
+.contato form input:not([type=submit]), .contato form textarea{
+   width: 100%;
+   border: 1px solid #ccc;
+   padding-left: 15px;
+   font-size: 18px;
+}
+
+.contato form input:not([type=submit]){
+   height: 40px;
+   line-height: 40px;
+}
+
+.contato form textarea{
+   resize: none;
+   height: 120px;
+   padding-top: 10px;
+}
+/****/
+/* footer */
+footer{
+   margin-top: 80px;
+   padding: 40px 0;
+   background-color: #252525;
+}
+
+footer .container{
+   display: flex;
+   justify-content: space-between;
+   font-size: 19px;
+}
+
+footer p{
+   color: white;
+   font-style: italic;
+}
+
+footer nav ul{
+   display: flex;
+   gap: 60px;
+   list-style-type: none;
+}
+
+footer nav a{
+   color: white;
+   text-decoration: none;
+}
+
+footer nav ul li{
+   font-style: italic;
+   text-transform: uppercase;
+}
+/****/
+
+@media screen and (max-width: 768px) {
+   /* header */
+
+   header .container > img{
+      width: 150px;
+   }
+   nav.desktop{
+      display: none;
+   }
+
+   nav.mobile{
+      display: block;
+   }
+   /****/
+   /* section veiculos */
+   .vitrine-destaque-container{
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+   }
+
+   .vitrine-destaque{
+      text-align: center;
+      width: 80%;
+   }
+   .vitrine-destaque .button-link{
+      margin: 0 auto;
+      margin-top: 10px;
+      width:100%;
+      max-width: 200px;
+   }
+   /****/
+   /* section contato */
+   .contato .w50{
+      flex-wrap: wrap;
+   }
+   /****/
+   /* footer */
+   footer .container{
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+   }
+   /****/
+}
+
+@media screen and (max-width: 480px) {
+   /* section veiculos */
+   .vitrine-destaque{
+      width: 100%;
+   }
+
+   .veiculos-destaque .container-titulo h2{
+      font-size: 23px;
+   }
+   /****/
+   /* footer */
+   footer .container{
+      font-size: 15px;
+   }
+
+   footer nav ul{
+      gap: 20px;
+   }
+   /****/
+}

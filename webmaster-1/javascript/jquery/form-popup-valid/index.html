@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Janela Modal</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <button id="contact" class="button">Entrar em Contato</button>
+   <div id="popup">
+      <div id="background"></div>
+      <form autocomplete="off" action="#" id="form">
+         <img id="close-icon" src="../close-icon.svg" alt="Ícone X">
+         <!-- Tirei os types específicos dos inputs pois isso interfere um pouco na validação manual com jQuery -->
+         <div class="input-field">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" placeholder="Nome Sobrenome">
+         </div>
+         <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="exemplo@gmail.com">
+         </div>
+         <div class="input-field">
+            <label for="password">Telefone</label>
+            <input type="text" name="tel" id="tel" placeholder="(xx) xxxxx-xxxx">
+         </div>
+         <div class="input-field">
+            <input class="button" type="submit" value="Cadastrar" id="register">
+         </div>
+      </form>
+   </div>
+<script src="../jquery-3.6.1.min.js"></script>
+<script src="./js/popup.js"></script>
+<script src="./js/validacao.js"></script>
+</body>
+</html>
